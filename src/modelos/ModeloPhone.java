@@ -2,8 +2,9 @@ package modelos;
 
 
 import anotaciones.Phone;
+import anotaciones.Price;
 
-//@Phone(marca = "sony")
+@Phone(marca = "sony")
 public class ModeloPhone {
 
     private String color;
@@ -47,7 +48,8 @@ public class ModeloPhone {
     }
 
 
-    public void gigasRam(){
+    @Price(price = "expansive")
+    public void moreGigasRam(){
         this.modelo = "iPhone 13";
     }
 

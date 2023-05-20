@@ -1,5 +1,9 @@
 import anotaciones.Phone;
+import anotaciones.Price;
 import modelos.ModeloPhone;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 
 public class Aplicacion {
 
@@ -27,7 +31,32 @@ public class Aplicacion {
                 System.out.println("No es Celular");
             }
 
+        for(Method metodo : phone.getClass().getMethods()) {
+
+
+            if(metodo.getAnnotation(Price.class) != null) {
+
+                System.out.println("This method " + metodo.getName() + " is expansive");
+
+           // for (Annotation anotacion : metodo.getAnnotations()) {
+
+
+
+
+            }
+
+        }
+
+//            System.out.println(metodo.getName());
+//
+//            if(metodo.getClass().isAnnotationPresent(Price.class))
+//
+//                System.out.println("Method very expansive"
+//                + metodo.getName() );
+
+        }
+
 
             //System.out.println("Anotaciones @Java");
     }
-}
+
