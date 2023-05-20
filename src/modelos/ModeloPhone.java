@@ -1,11 +1,26 @@
 package modelos;
 
 
+import anotaciones.Phone;
+
+@Phone(marca = "sony")
 public class ModeloPhone {
 
     private String color;
-    private int anoPhone;
-    private String modelo;
+    private int yearPhone;
+    public String modelo;
+
+
+    public ModeloPhone(String color, int yearPhone) {
+
+        this.color = color;
+        this.yearPhone = yearPhone;
+
+
+    }
+
+
+
 
     public String getColor() {
         return color;
@@ -15,12 +30,12 @@ public class ModeloPhone {
         this.color = color;
     }
 
-    public int getAnoPhone() {
-        return anoPhone;
+    public int getYearPhone() {
+        return yearPhone;
     }
 
-    public void setAnoPhone(int anoPhone) {
-        this.anoPhone = anoPhone;
+    public void setYearPhone(int yearPhone) {
+        this.yearPhone = yearPhone;
     }
 
     public String getModelo() {
@@ -31,6 +46,10 @@ public class ModeloPhone {
         this.modelo = modelo;
     }
 
+
+    public void gigasRam(){
+        this.modelo = "iPhone 13";
+    }
 
 
 }
