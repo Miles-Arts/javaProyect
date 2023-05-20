@@ -3,7 +3,7 @@ package modelos;
 
 import anotaciones.Phone;
 
-@Phone(marca = "sony")
+//@Phone(marca = "sony")
 public class ModeloPhone {
 
     private String color;

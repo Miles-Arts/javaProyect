@@ -9,13 +9,22 @@ public class Aplicacion {
             //@SuppressWarnings("unused") quita adevertencias
             ModeloPhone phone = new ModeloPhone("Blue", 2023);
 
+//            phone.getClass().getAnnotation(Phone.class);
+//            if (phone.getClass().getAnnotation(Phone.class) != null) {
+//
+//                System.out.println("Es celular");
+//
+//            } else {
+//
+//                System.out.println("No es celular");
+//            }
 
-            if (phone.getClass().getAnnotation(Phone.class) != null) {
 
-                System.out.println("Es celular");
+            if(phone.getClass().isAnnotationPresent(Phone.class)){
 
-            } else {
-                System.out.println("No es celular");
+                System.out.println("Es Celular");
+            }else {
+                System.out.println("No es Celular");
             }
 
 
