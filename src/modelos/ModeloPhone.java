@@ -1,6 +1,7 @@
 package modelos;
 
 
+import anotaciones.Option;
 import anotaciones.Phone;
 import anotaciones.Price;
 
@@ -9,7 +10,9 @@ public class ModeloPhone {
 
     private String color;
     private int yearPhone;
-    public String modelo;
+
+    @Option(cargador = "conClable")
+    public String usb;
 
 
     public ModeloPhone(String color, int yearPhone) {
@@ -39,18 +42,18 @@ public class ModeloPhone {
         this.yearPhone = yearPhone;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getUsb() {
+        return usb;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setUsb(String usb) {
+        this.usb = usb;
     }
 
 
     @Price(price = "expansive")
     public void moreGigasRam(){
-        this.modelo = "iPhone 13";
+        this.usb = "iPhone 13";
     }
 
 
