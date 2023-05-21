@@ -12,5 +12,4 @@ public @interface Phone {
 
     String marca();
 
-
 }

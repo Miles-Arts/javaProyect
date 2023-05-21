@@ -5,6 +5,7 @@ import modelos.ModeloPhone;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Aplicacion {
@@ -38,8 +39,13 @@ public class Aplicacion {
 
             if(metodo.getAnnotation(Price.class) != null) {
 
+                //Si es costoso que se ejecute el método
                 System.out.println("This method -" + metodo.getName() + "- is expansive");
-
+                try {
+                    metodo.invoke(phone,(Object[]) arg);
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    System.out.println("No se ha podido ejecutar");
+                }
             }
         }
 
