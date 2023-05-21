@@ -52,9 +52,16 @@ public class Aplicacion {
         for(Field field : phone.getClass().getFields() ) {
 
             if(field.getAnnotation(Option.class) != null) {
-
+                //SI tiene la anotación de opcional dame su valor
                 System.out.println("El atributo cargador -" + field.getName() + "- is optional");
-
+                try {
+                    if(field.get(phone) instanceof String) {
+                        String value = (String)field.get(phone);
+                        System.out.println("El valor del atributo " + field.getName() + " es " + value);
+                    }
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
